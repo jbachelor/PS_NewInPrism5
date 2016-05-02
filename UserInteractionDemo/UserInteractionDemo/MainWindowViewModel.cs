@@ -16,11 +16,25 @@ namespace UserInteractionDemo
         {
             NotificationRequest = new InteractionRequest<INotification>();
             NotificationCommand = new DelegateCommand(RaiseNotification);
+
+            ConfirmationRequest = new InteractionRequest<IConfirmation>();
+            ConfirmationCommand = new DelegateCommand(RaiseConfirmation);
+        }
+
+        string lf = $"{System.Environment.NewLine}";
+        
+        private void RaiseConfirmation()
+        {
+            string ts = $"{DateTime.Now}";
+            ConfirmationRequest.Raise(new Confirmation
+            {
+                Title = "Neato Confirmation Title",
+                Content = $"This is a cautionary tale of a confirmation message you love to read.{lf}{lf}{ts}"
+            }, result => Status = result.Confirmed ? $"Confirmed!{lf}{lf}{ts}" : $"Nope... Not confirmed.{lf}{lf}{ts}");
         }
 
         private void RaiseNotification()
         {
-            string lf = $"{System.Environment.NewLine}";
             string timeStamp = $"{DateTime.Now}";
             StringBuilder sb = new StringBuilder("Amazingly clear, concise, enlightening notification goes here, yo.");
 
@@ -41,5 +55,7 @@ namespace UserInteractionDemo
 
         public InteractionRequest<INotification> NotificationRequest { get; set; }
         public ICommand NotificationCommand { get; set; }
+        public InteractionRequest<IConfirmation> ConfirmationRequest { get; set; }
+        public ICommand ConfirmationCommand { get; set; }
     }
 }

@@ -15,6 +15,10 @@
             <prism:PopupWindowAction IsModal="True"
                                      CenterOverAssociatedObject="True" />
         </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding ConfirmationRequest}">
+            <prism:PopupWindowAction IsModal="True"
+                                     CenterOverAssociatedObject="True" />
+        </prism:InteractionRequestTrigger>
     </i:Interaction.Triggers>
     <Grid>
         <StackPanel>
@@ -22,7 +26,8 @@
                     Content="Raise Default Notification"
                     Command="{Binding NotificationCommand}" />
             <Button Margin="5"
-                    Content="Raise Default Confirmation" />
+                    Content="Raise Default Confirmation"
+                    Command="{Binding ConfirmationCommand}" />
             <Button Margin="5"
                     Content="Raise Custom Popup View Interaction" />
             <TextBlock Text="{Binding Status}"
