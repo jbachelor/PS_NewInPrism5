@@ -35,3 +35,6 @@ C:\Users\JBachelor\Dropbox\dbDev\PS_NewInPrism5\UserInteractionDemo\UserInteract
 C:\Users\JBachelor\Dropbox\dbDev\PS_NewInPrism5\UserInteractionDemo\UserInteractionDemo\obj\Debug\UserInteractionDemo.csproj.GenerateResource.Cache
 C:\Users\JBachelor\Dropbox\dbDev\PS_NewInPrism5\UserInteractionDemo\UserInteractionDemo\obj\Debug\UserInteractionDemo.exe
 C:\Users\JBachelor\Dropbox\dbDev\PS_NewInPrism5\UserInteractionDemo\UserInteractionDemo\obj\Debug\UserInteractionDemo.pdb
+C:\Users\JBachelor\Dropbox\dbDev\PS_NewInPrism5\UserInteractionDemo\UserInteractionDemo\obj\Debug\CustomPopupView.g.cs
+C:\Users\JBachelor\Dropbox\dbDev\PS_NewInPrism5\UserInteractionDemo\UserInteractionDemo\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\JBachelor\Dropbox\dbDev\PS_NewInPrism5\UserInteractionDemo\UserInteractionDemo\obj\Debug\CustomPopupView.baml

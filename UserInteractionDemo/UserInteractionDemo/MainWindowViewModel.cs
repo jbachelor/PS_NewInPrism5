@@ -19,9 +19,17 @@ namespace UserInteractionDemo
 
             ConfirmationRequest = new InteractionRequest<IConfirmation>();
             ConfirmationCommand = new DelegateCommand(RaiseConfirmation);
+
+            CustomPopupRequest = new InteractionRequest<INotification>();
+            CustomPopupCommand = new DelegateCommand(RaiseCustomPopup);
         }
 
-        string lf = $"{System.Environment.NewLine}";
+        private void RaiseCustomPopup()
+        {
+            string ts = DateTime.Now.ToString();
+            CustomPopupRequest.Raise(new Notification { Title = "Custom Popup Thingy", Content = $"Super duper custom job. Oh yeah!{lf}{lf}{ts}" }, 
+                result => Status = "Custom good to go stuff");
+        }
         
         private void RaiseConfirmation()
         {
@@ -53,9 +61,14 @@ namespace UserInteractionDemo
             set { SetProperty<string>(ref _status, value); }
         }
 
+        string lf = $"{System.Environment.NewLine}";
+
+
         public InteractionRequest<INotification> NotificationRequest { get; set; }
         public ICommand NotificationCommand { get; set; }
         public InteractionRequest<IConfirmation> ConfirmationRequest { get; set; }
         public ICommand ConfirmationCommand { get; set; }
+        public InteractionRequest<INotification> CustomPopupRequest { get; set; }
+        public ICommand CustomPopupCommand { get; set; }
     }
 }

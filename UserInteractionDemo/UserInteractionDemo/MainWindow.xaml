@@ -19,6 +19,14 @@
             <prism:PopupWindowAction IsModal="True"
                                      CenterOverAssociatedObject="True" />
         </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding CustomPopupRequest}">
+            <prism:PopupWindowAction IsModal="True"
+                                     CenterOverAssociatedObject="True">
+                <prism:PopupWindowAction.WindowContent>
+                    <local:CustomPopupView />
+                </prism:PopupWindowAction.WindowContent>
+            </prism:PopupWindowAction>
+        </prism:InteractionRequestTrigger>
     </i:Interaction.Triggers>
     <Grid>
         <StackPanel>
@@ -29,7 +37,8 @@
                     Content="Raise Default Confirmation"
                     Command="{Binding ConfirmationCommand}" />
             <Button Margin="5"
-                    Content="Raise Custom Popup View Interaction" />
+                    Content="Raise Custom Popup View Interaction"
+                    Command="{Binding CustomPopupCommand}"/>
             <TextBlock Text="{Binding Status}"
                        Margin="25"
                        HorizontalAlignment="Center" TextAlignment="Center"/>
